@@ -1,7 +1,12 @@
 
 use std::io;
+use std::fs;
 
 use crate::utils::task_list;
+
+pub fn read_tasks_from_file() -> Result<String, io::Error> {
+   fs::read_to_string("tasks.json") 
+}
 
 pub fn handle_input(list: &mut task_list::TaskList) -> bool {
     println!("\"add\", \"del\", or \"exit\"");

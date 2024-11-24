@@ -10,6 +10,7 @@ pub struct TaskList {
 }
 
 impl TaskList {
+    
     pub fn add(&mut self, task: String, date: String, dtls: String) {
         self.tasks.push(task::Task {
             name: task,
@@ -21,6 +22,7 @@ impl TaskList {
     pub fn del_task(&mut self, index: usize) {
         self.tasks.remove(index);
     }
+    #[allow(dead_code)]
     pub fn edit_task(&mut self, index: usize, task: String, date: String, dtls: String) {
         let _ = replace(&mut self.tasks[index], task::Task { name: task, due_date: date, details: dtls });
     }
